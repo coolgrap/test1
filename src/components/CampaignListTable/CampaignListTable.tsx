@@ -1,5 +1,6 @@
 import { Button, Table } from 'antd';
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 import CampaignModalForm from '../../components/CampaignModalForm/CampaignModalForm';
 
@@ -80,7 +81,7 @@ for (let i = 0; i < 46; i++) {
     edit: (
       <div>
         <Button type="dashed">편집</Button>
-        <Button type="dashed">시작</Button>
+        <Button type="dashed"><Link to="/campaigns/123/docs">시작</Link></Button>
         <Button type="dashed">종료</Button>
       </div>
     ),

@@ -19,7 +19,7 @@ class Login extends React.Component<any, any> {
             email,
           };
           document.cookie = 'key=' + btoa(JSON.stringify(loginData));
-          this.props.history.push('/dashboard/campaigns');
+          this.props.history.push('/campaigns');
           return true;
         } else {
           // let $toastContent = $('<span style="color: #FFB4BA">Incorrect username or password</span>');

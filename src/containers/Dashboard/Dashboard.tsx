@@ -2,7 +2,7 @@ import { Col, Icon, Layout, Menu, Row } from 'antd';
 import React from 'react';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 
-import { CampaignListTable, EvaluationList, UserListTable } from '../../components';
+import { CampaignListTable, DocListTable, UserListTable } from '../../components';
 
 import './Dashboard.scss';
 
@@ -10,7 +10,7 @@ const { Sider, Content } = Layout;
 /*
  - /campaigns; list page
    - modify; modal
-   - :id/eval; page
+   - :id/eval; page => - :id/docs; page => 
      - view doc; modal
  - /users; list page
    - modify; modal
@@ -45,23 +45,14 @@ class Dashboard extends React.Component<any, any> {
   }
 
   public render() {
-    console.log('@#@#@#@#@#@#@# ', this.props.match);
-
-    const subRoutes = [
-      {
-        path: '/campaigns',
-        subMenu: () => <CampaignListTable />,
-      },
-      {
-        path: '/campaigns/:id',
-        subMenu: () => <EvaluationList campaignId={this.props.match.params.id}/>,
-      },
-      {
-        path: '/users',
-        subMenu: () => <UserListTable />,
-      },
-    ];
-
+    const match = this.props.match;
+    const subRoutes = (
+      <div>
+        <Route exact={true} path={`/campaigns`} component={CampaignListTable} />
+        <Route exact={true} path={`/users`} component={UserListTable} />      
+        <Route path={`${match.url}/:id/docs`} component={DocListTable} />
+      </div>
+    );
     return (
       <Router>
         <Layout id="components-layout-custom-trigger">
@@ -82,13 +73,7 @@ class Dashboard extends React.Component<any, any> {
                 <span className="nav-text">사용자 리스트</span>
                 <Link to="/users" />
               </Menu.Item>
-              <Menu.Item key="3">
-                <Icon type="user" />
-                <span className="nav-text">평가리스트</span>
-                <Link to="/campaigns/:id" />
-              </Menu.Item>
             </Menu>
-
           </Sider>
           <Layout>
             <Row style={{ height: '30px' }}>
@@ -102,13 +87,7 @@ class Dashboard extends React.Component<any, any> {
               </Col>
             </Row>
             <Content id="content" style={{ margin: '10px 10px', padding: 10, background: '#fff', minHeight: 280 }}>
-              {subRoutes.map((route, index) => (
-                <Route
-                  key={index}
-                  path={route.path}
-                  component={route.subMenu}
-                />
-              ))}
+              {subRoutes}
             </Content>
           </Layout>
           <div id="campaign-modal" />

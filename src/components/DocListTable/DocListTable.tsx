@@ -1,4 +1,4 @@
-import { Button, Table } from 'antd';
+import { Button, Card, Modal, Progress, Rate, Table } from 'antd';
 import * as React from 'react';
 
 // import CampaignModalForm from '../../components/CampaignModalForm/CampaignModalForm';
@@ -123,8 +123,34 @@ class DocListTable extends React.Component<any, any> {
             캠페인 생성
           </Button>*/}
         </div>
-        {/*<CampaignModalForm visible={this.state.modalVisible} onCancel={this.handleCancel}/>*/}
-        <Table size="default" rowSelection={rowSelection} columns={columns} dataSource={data} />
+        <Table onRowClick={this.showModal} size="default" rowSelection={rowSelection} columns={columns} dataSource={data} />
+        <Modal
+          visible={this.state.modalVisible}
+          title="문서 상세 내용"
+          okText="확인"
+          maskClosable={false}
+          width="90%"
+          onOk={this.handleCancel}
+          onCancel={this.handleCancel}
+        >
+          <div>남은시간: 10분 02초</div>
+          {/*<Button onClick={this.showModal} type="primary">평가 시작</Button>*/}
+          <Progress percent={70} />
+          <Card title="Card title">
+            <p>Card content Card content Card content Card content Card content Card content Card content Card content Card content</p>
+            <p>Card content Card content Card content Card content Card content Card content Card content Card content Card content</p>
+            <p>Card content Card content Card content Card content Card content Card content Card content Card content Card content</p>
+            <p>Card content Card content Card content Card content Card content Card content Card content Card content Card content</p>
+            <p>Card content Card content Card content Card content Card content Card content Card content Card content Card content</p>
+            <p>Card content Card content Card content Card content Card content Card content Card content Card content Card content</p>
+            <p>Card content Card content Card content Card content Card content Card content Card content Card content Card content</p>
+            <p>Card content Card content Card content Card content Card content Card content Card content Card content Card content</p>
+            <p>Card content Card content Card content Card content Card content Card content Card content Card content Card content</p>
+            <p>Card content Card content Card content Card content Card content Card content Card content Card content Card content</p>
+            <p>Card content Card content Card content Card content Card content Card content Card content Card content Card content</p>
+            <Rate count={10}/>
+          </Card>
+        </Modal>
       </div>
     );
   }

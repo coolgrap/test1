@@ -6,8 +6,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import { Dashboard, Header, Login } from '../../containers';
 
-// import { CampaignListTable } from '../../components';
-
 import '../../index.scss';
 
 const routes = (
@@ -17,7 +15,6 @@ const routes = (
       <Route path="/login" component={Login}/>
       <Route path="/dashboard" component={Dashboard}/>
       <Route path="/campaigns" component={Dashboard}/>
-      <Route path="/campaigns/:id" component={Dashboard}/>
       <Route path="/users" component={Dashboard}/>
     </div>
   </LocaleProvider>
