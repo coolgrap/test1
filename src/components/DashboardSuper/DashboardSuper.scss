@@ -1,0 +1,30 @@
+#components-layout-custom-trigger {
+  .trigger {
+    font-size: 18px;
+    line-height: 30px;
+    padding: 0 16px;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #108ee9;
+    }
+  }
+
+  .logo {
+    height: 30px;
+    background: #333;
+    border-radius: 6px;
+    margin: 16px;
+  }
+
+  .ant-layout-sider-collapsed {
+    .anticon {
+      font-size: 16px;
+    }
+
+    .nav-text {
+      display: none;
+    }
+  }
+}

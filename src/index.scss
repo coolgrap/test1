@@ -1,0 +1,28 @@
+body {
+  font-family: 'YouandiModernTR', 'YouandiModernTB', 'YouandiModernHEB', dotum, '돋움', gulim, '굴림', Arial, AppleGothic, verdana, sans-serif, helvetica;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  height: auto;
+}
+
+@font-face {
+  font-family: 'YouandiModernTR';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/font/Youandi_Modern_TextRegular.eot'), url('/font/Youandi_Modern_TextRegular.eot?#iefix') format('embedded-opentype'), url('/font/Youandi_Modern_TextRegular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'YouandiModernTB';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/font/Youandi_Modern_TextBold.eot'), url('/font/Youandi_Modern_TextBold.eot?#iefix') format('embedded-opentype'), url('/font/Youandi_Modern_TextBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'YouandiModernHEB';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/font/Youandi_Modern_HeadExtraBold.eot'), url('/font/Youandi_Modern_HeadExtraBold.eot?#iefix') format('embedded-opentype'), url('/font/Youandi_Modern_HeadExtraBold.woff') format('woff');
+}
